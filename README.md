@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+The React icons are being added to the project. using npm install react-icons
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
