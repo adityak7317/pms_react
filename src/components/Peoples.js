@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Goals() {
+export default function People() {
   return (
     <div>
-      <p>Goals works</p>
+      <p>People works</p>
     </div>
   );
 }

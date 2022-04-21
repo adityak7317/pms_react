@@ -1,1 +1,0 @@
-// veerana did peoples
