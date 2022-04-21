@@ -1,4 +1,5 @@
 import React from "react";
+import "./Footer.css";
 
 export default function () {
   let mystyle = {
@@ -7,7 +8,7 @@ export default function () {
   };
   // it can also be given by text-light in the div section
   return (
-    <div className="bg-dark  text-center" style={mystyle}>
+    <div className="bg-dark  text-center footer" style={mystyle}>
       Footer works
     </div>
   );
