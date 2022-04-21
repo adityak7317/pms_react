@@ -1,11 +1,11 @@
-import Header from "./components/Header/Header";
-import Dashboard from "./components/Dashboard/Dashboard";
-import Goals from "./components/Goals/Goals";
-import Peoples from "./components/Peoples/Peoples";
-import Feedback from "./components/Feedback/Feedback";
-import Profile from "./components/Profile/Profile";
-import Footer from "./components/Footer/Footer";
-import Login from "./components/Login/Login";
+import Header from "./Header/Header";
+import Dashboard from "./Dashboard/Dashboard";
+import Goals from "./Goals/Goals";
+import Peoples from "./Peoples/Peoples";
+import Feedback from "./Feedback/Feedback";
+import Profile from "./Profile/Profile";
+import Footer from "./Footer/Footer";
+import Login from "./Login/Login";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -13,6 +13,7 @@ function App() {
   return (
     <>
       <Router>
+        <Login/>
         <Header />
         <Routes>
           <Route path="/" element={<Dashboard />}></Route>
