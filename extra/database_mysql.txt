@@ -1,0 +1,104 @@
+drop database pms;
+
+create database pms;
+use pms;
+
+create table depts(
+	d_id int primary key auto_increment,
+    d_name varchar(100) not null
+);
+
+
+insert into depts(d_name)
+values ('IT'),
+('Management'),
+('Bussiness'),
+('Human Resource'),
+('Accounts');
+
+
+create table roles(
+	r_id int primary key auto_increment,
+    r_name varchar(100) not null
+);
+
+
+insert into roles(r_name)
+values ('Manager'),
+('Team Lead'),
+('Software Engineer'),
+('Analyst'),
+('Developer'),
+('Trainee'),
+('Associate Enigeer');
+
+
+create table employees(
+	em_id int primary key auto_increment,
+    em_name varchar(300) not null,
+    em_phone varchar(15) not null,
+    em_email varchar(100) not null,
+    em_pass varchar(30) not null,
+    d_id int not null,
+    r_id int not null,
+    foreign key(d_id) references depts(d_id),
+    foreign key(r_id) references roles(r_id)
+);
+
+
+insert into employees(em_name, em_phone, em_email, em_pass, d_id, r_id)
+values('Ram', '9539384726', 'ram@admin.com', 'passwordram', 1, 1),
+('suraj', '9638936307', 'email@email.com', 'passwordxyz', 2,4),
+('keshav', '9047374937', 'example@email.com', 'password', 4,2),
+('dinesh', '8365908268', 'gmail@gmai.com', 'password', 2,5),
+('shiv', '9379379276', 'email@admin.com', 'passwordshiv', 3,1),
+('akash', '8362073297', 'xyz@email.com', 'abc', 4,5);
+
+
+create table goals(
+	g_id int primary key auto_increment,
+    em_id int not null,
+    g_title longtext not null,
+    g_desc longtext not null,
+    s_date date not null,
+    e_date date not null,
+    comment longtext,
+    rating int,
+    g_status int,
+    goal_date datetime,
+    action_date datetime,
+    completion_date datetime,    
+    foreign key(em_id) references employees(em_id)
+);
+
+
+insert into goals(em_id, g_title, g_desc, s_date, e_date, g_status, goal_date, action_date)
+values(1, 'get aws certificate', 'Amazon Web Services, Inc. is a subsidiary of Amazon providing on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis.', '2022-03-12', '2022-05-13', 1, now(), now()),
+(3, 'complete abc project', 'abc project will be completed with in the time period', '2022-01-05', '2022-04-12', 2, now(), now());
+
+
+create table feedbacks(
+	f_id int primary key auto_increment,
+    sent_em int not null,
+    f_date datetime not null,
+    f_subject longtext not null,
+    f_desc longtext not null,
+    rec_em int not null,
+    foreign key(sent_em) references employees(em_id),
+    foreign key(rec_em) references employees(em_id)
+);
+
+
+
+select employees.em_name, employees.em_email, 
+depts.d_name, 
+roles.r_name, 
+goals.g_title, goals.g_status, goals.action_date 
+from employees
+inner join depts 
+on employees.d_id = depts.d_id
+inner join roles
+on employees.r_id = roles.r_id
+inner join goals 
+on employees.em_id = goals.em_id
+;
