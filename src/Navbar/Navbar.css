@@ -1,0 +1,15 @@
+nav{
+    background-color: rgb(128, 187, 255);
+    width: 100%;
+    height: 30%;
+}
+
+a{
+    /* color:black;
+    font-style: normal; */
+    padding: 30px;
+}
+
+/* .nav-items{
+    list-style: none;
+} */

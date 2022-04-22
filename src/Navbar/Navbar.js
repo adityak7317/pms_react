@@ -1,16 +1,43 @@
 import React from "react";
-import "./Header.css";
+import "./Navbar.css";
+import ReactDom from "react-dom";
 import { Link } from "react-router-dom";
+import Goals from "../Goals/Goals";
 
-export default function Header() {
+export default function Navbar() {
   return (
     <>
-      <div className="header">
-        <p>Performance Management System</p>
-      </div>
+      <nav>
+        <img
+          className="logo"
+          src="https://www.ahana.co.in/wp-content/uploads/2019/09/logo-1.png"
+          alt="logo"
+        />
+        {/* <Link to="/Goals">Goals</Link> */}
+        <a href="/Dashboard">Dashboard</a>
+        <a href="/Peoples">Peoples</a>
+        <a href="/Goals">Goals</a>
+        <a href="/Profile">Profile</a>
+        {/* <Link to="/peoples">Peoples</Link> */}
+        {/* <ul className="nav-items">
+          {MenuItems.map((item, index) => {
+            return (
+              <>
+                <li key={index}>
+                  <Link className={item.cName} to={Dashboard}                    {item.title}
+                  </Link>>
+                </li>
+              </>
+            );
+          })}
+        </ul> */}
+      </nav>
     </>
   );
 }
+
+const rootElement = document.getElementById("root");
+ReactDom.render(<Navbar />, rootElement);
 
 // <li className="nav-item dropdown">
 //               <Link
@@ -73,3 +100,17 @@ export default function Header() {
 //     </nav>
 //   </>
 // );
+
+// --------------------------------------------------------
+
+// <div className="header">
+//         <p>Performance Management System</p>
+
+//         <Link to={"/Goals"}>Goals </Link>
+//         <Link to={"/Peoples"}>Peoples</Link>
+//         <Link to={"/Dashboard"}>
+//           {/* <DashboardIcon /> */}
+//           Dashboard
+//         </Link>
+//         <Link to={"/Profile"}>Profile</Link>
+//       </div>
