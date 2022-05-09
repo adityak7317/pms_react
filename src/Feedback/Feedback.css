@@ -1,0 +1,7 @@
+.footer{
+    background-color: black;
+}
+.footer p{
+    display: flex;
+    justify-content: center;
+}
