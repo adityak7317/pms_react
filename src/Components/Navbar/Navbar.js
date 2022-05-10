@@ -17,11 +17,13 @@ export default function Navbar() {
     <>
       <nav>
         <div className="header">
-          <img
-            className="logo"
-            src="https://www.ahana.co.in/wp-content/uploads/2019/09/logo-1.png"
-            alt="ahana logo"
-          />
+          <Link to="/">
+            <img
+              className="logo"
+              src="https://www.ahana.co.in/wp-content/uploads/2019/09/logo-1.png"
+              alt="ahana logo"
+            />
+          </Link>
           <h3>Performance Management System</h3>
         </div>
 
@@ -47,6 +49,7 @@ export default function Navbar() {
             </li>
           </ul>
           <div className="userdropdown">
+            {/* <div className="user"> */}
             <button
               className="dropdown-toggle btn"
               type="button"
@@ -55,6 +58,9 @@ export default function Navbar() {
             >
               <FaUserTie />
             </button>
+            {/* <p>Username</p> */}
+            {/* </div> */}
+
             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <Link className="dropdown-item" to="/Profile">
                 <ImProfile /> Profile

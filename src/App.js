@@ -9,15 +9,14 @@ import {
   useRouteMatch,
   useParams,
 } from "react-router-dom";
-import Navbar from "./Navbar/Navbar";
-import Dashboard from "./Dashboard/Dashboard";
-import Goals from "./Goals/Goals";
-import Peoples from "./Peoples/Peoples";
-import Feedback from "./Feedback/Feedback";
-import Profile from "./Profile/Profile";
-import Footer from "./Footer/Footer";
-import Login from "./Login/Login";
-// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./Components/Navbar/Navbar";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Goals from "./Components/Goals/Goals";
+import Peoples from "./Components/Peoples/Peoples";
+import Feedback from "./Components/Feedback/Feedback";
+import Profile from "./Components/Profile/Profile";
+import Footer from "./Components/Footer/Footer";
+import Login from "./Components/Login/Login";
 
 function App() {
   return (

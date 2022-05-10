@@ -18,9 +18,11 @@ nav{
     margin-left: 390px;
 }
 .nav-container{
+    margin: -8px;
     font-size: 21px;
     display: flex;
     justify-content: space-around;
+    /* padding: 0%; */
 }
 ul{
     display: flex;
@@ -35,14 +37,42 @@ li{
     /* margin: auto; */
     margin-left: 50px;
 }
+
+.menu_name:hover{
+    color:white;
+    /* font-style:normal; */
+    text-decoration: none;
+    
+}
+.dropdown-item{
+    font-size: large;
+    padding: 3%;
+    margin: 0%;
+}
+
 .dropdown-menu{
+    
     font-size: 18px;
+    padding: 0.5%;
+    /* background-color: rgb(195, 199, 255); */
+    /* padding-left: 0%; */
+}
+
+.dropdown-menu :hover{
+    background-color: rgb(219, 219, 219);
 }
 .dropdown-toggle{
-    margin-left: 600px;
-    /* padding: 5%; */
     background-color: var(--navcolor);
+    margin-left: 550px;
+
 }
+.dropdown-toggle :hover{
+    color:white;
+    /* font-style:normal; */
+    text-decoration: none;
+    
+}
+
 .menu_name{
     text-decoration: none;
     color: black;
