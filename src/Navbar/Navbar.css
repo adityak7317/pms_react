@@ -1,34 +1,47 @@
 
+
+
 nav{
+    --navcolor:rgb(128, 187, 255);
     height: 5%;
-    background-color: rgb(157, 203, 255);
+    background-color: var(--navcolor);
     padding:3px
 }
 .header{
     display: flex;
     flex-direction: row;
-    margin-buttom: 0px;
+    /* margin-buttom: 0px; */
 }
 .header h3{
     font-size: x-large;
-    margin: auto;
+    padding-top: 0.5%;
+    margin-left: 390px;
 }
-
 .nav-container{
-   
-    /* background-color: aliceblue; */
+    font-size: 21px;
+    display: flex;
+    justify-content: space-around;
 }
 ul{
-    margin: 1%;
-    /* padding: 3px; */
-    font-size: 20px;
     display: flex;
-    flex-direction:row ;
-    justify-content: space-between;
+/* flex-direction: row; */
 }
+
+
+
 li{
     list-style: none;
     font-style: normal;
+    /* margin: auto; */
+    margin-left: 50px;
+}
+.dropdown-menu{
+    font-size: 18px;
+}
+.dropdown-toggle{
+    margin-left: 600px;
+    /* padding: 5%; */
+    background-color: var(--navcolor);
 }
 .menu_name{
     text-decoration: none;

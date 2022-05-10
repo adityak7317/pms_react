@@ -3,12 +3,14 @@ import "./Navbar.css";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 
+import { BiUserPin } from "@react-icons/all-files/bi/BiUserPin";
 import { RiDashboardFill } from "@react-icons/all-files/ri/RiDashboardFill";
+import { ImProfile } from "@react-icons/all-files/im/ImProfile";
 import { MdPeople } from "@react-icons/all-files/md/MdPeople";
 import { BiTask } from "@react-icons/all-files/bi/BiTask";
 import { FaUserTie } from "@react-icons/all-files/fa/FaUserTie";
+import { RiFeedbackLine } from "@react-icons/all-files/ri/RiFeedbackLine";
 import { FiLogOut } from "@react-icons/all-files/fi/FiLogOut";
-import { IoMdArrowDropdown } from "@react-icons/all-files/io/IoMdArrowDropdown";
 
 export default function Navbar() {
   return (
@@ -21,10 +23,6 @@ export default function Navbar() {
             alt="ahana logo"
           />
           <h3>Performance Management System</h3>
-          <Link to="#" className="menu_name">
-            <FaUserTie />
-            <IoMdArrowDropdown />
-          </Link>
         </div>
 
         <div className="nav-container">
@@ -36,40 +34,51 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/Peoples" className="menu_name">
-                <MdPeople />
-                Peoples
-              </Link>
-            </li>
-            <li>
               <Link to="/Goals" className="menu_name">
                 <BiTask />
                 Goals
               </Link>
             </li>
             <li>
+              <Link to="/Peoples" className="menu_name">
+                <MdPeople />
+                Peoples
+              </Link>
+            </li>
+          </ul>
+          <div className="userdropdown">
+            <button
+              className="dropdown-toggle btn"
+              type="button"
+              data-target="#dropleft"
+              data-toggle="dropdown"
+            >
+              <FaUserTie />
+            </button>
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <Link className="dropdown-item" to="/Profile">
+                <ImProfile /> Profile
+              </Link>
+              <Link className="dropdown-item" to="#">
+                <BiUserPin /> Roles
+              </Link>
+              <Link className="dropdown-item" to="/Feedback">
+                <RiFeedbackLine /> Feedback
+              </Link>
+              <Link className="dropdown-item" to="/Login">
+                <FiLogOut /> Logout
+              </Link>
+            </div>
+          </div>
+          {/* <li>
               <Link to="/Profile" className="menu_name">
                 <FaUserTie />
                 Profile
               </Link>
-            </li>
-          </ul>
+            </li> */}
+          {/* </ul> */}
         </div>
-        {/*  */}
-        <form>
-          <label></label>
-        </form>
       </nav>
     </>
   );
 }
-
-// <select name="cars" id="cars">
-// <option>Volvo</option>
-// <option>lygs</option>
-// <option>Opel</option>
-// <option>Audi</option>
-// </select>
-
-// const rootElement = document.getElementById("root");
-// ReactDOM.render(<Navbar />, rootElement);
