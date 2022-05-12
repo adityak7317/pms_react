@@ -35,30 +35,54 @@ export default function Navbar() {
               </span>
             </div>
             <div className="nav-content">
-              <div>
-                <div className="nav-menu">
-                  <ul>
-                    <li>
-                      <Link to="/Dashboard" className="menu-name">
-                        <RiDashboardFill />
-                        Dashboard
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/Goals" className="menu-name">
-                        <BiTask />
-                        Goals
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/Peoples" className="menu-name">
-                        <MdPeople />
-                        Peoples
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
+              {/* <div> */}
+              <div className="nav-menu">
+                <ul>
+                  <li>
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      to="/Dashboard"
+                      className="menu-name"
+                    >
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <RiDashboardFill />
+                      Dashboard
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      to="/Goals"
+                      className="menu-name"
+                    >
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <BiTask />
+                      Goals
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      to="/Peoples"
+                      className="menu-name"
+                    >
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <MdPeople />
+                      Peoples
+                    </Link>
+                  </li>
+                </ul>
               </div>
+              {/* </div> */}
 
               <div className="dropdown">
                 <button className="dropbtn">

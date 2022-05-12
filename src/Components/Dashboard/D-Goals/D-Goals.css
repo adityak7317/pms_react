@@ -1,0 +1,27 @@
+.goals-item{
+    box-sizing: border-box;
+    box-shadow: 3px 3px 9px #000;
+    border-radius: 5%;
+
+}
+.completed-by-manager{
+    background-color: #4ddc4f;
+}
+.completed-by-me{
+    background-color: #3796ff;
+}
+.rejected-goals{
+    background-color: #e25656;
+}
+
+.approved-goals{
+    background-color: #4bdebd;
+}
+
+.yet-to-approved{
+    background-color: #fae42a;
+}
+
+.total-goals{
+    background-color: #caabd0;
+}
