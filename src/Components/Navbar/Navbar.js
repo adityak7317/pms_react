@@ -85,9 +85,11 @@ export default function Navbar() {
               {/* </div> */}
 
               <div className="dropdown">
-                <button className="dropbtn">
-                  <FaUserTie />
-                </button>
+                <Link to="/Profile">
+                  <button className="dropbtn">
+                    <FaUserTie />
+                  </button>
+                </Link>
                 <div className="dropdown-content">
                   <Link className="dropdown-item" to="/Profile">
                     <ImProfile /> Profile
