@@ -15,36 +15,35 @@ export default function Dashboard() {
       {
         label: "Rate Gained",
         data: RateData.map((data) => data.rate),
-        // backgroundColor: ["#fab73fb0"],
+        // backgroundColor: ["rgba(255, 94, 0, 0.45)"],
       },
     ],
   });
 
   const style = {
-    bar: {
-      padding: "0%",
-      margin: "0%",
+    dashboard: {
+      // padding: "1%",
+      // boxSizing: "borderBox",
+      // border: ("1px", "solid", "white"),
+      // borderRadius: "10px",
+      // boxShadow: ("0px", "0px", "10px", "gray"),
+      // margin: "1%",
       display: "flex",
       flexDirection: "column",
-    },
-    avg: {
-      // margin: "3%",
-      // justifyItems: "center",
     },
   };
 
   return (
     <>
-      <div className="dashboard">
-        <div className="goals">
-          <Goals />
-        </div>
-        <div className="bar" style={style.bar}>
-          <div style={{ width: 700 }}>
-            <BarChart chartData={rateData} />
+      <div style={style.dashboard}>
+        <div className="dashboard">
+          <div className="goals">
+            <Goals />
           </div>
-          <div className="average" style={style.avg}>
-            <span>Average Rating : 6.4</span>
+          <div className="barchart">
+            <div style={{ width: 700 }}>
+              <BarChart chartData={rateData} />
+            </div>
           </div>
         </div>
       </div>
