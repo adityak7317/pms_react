@@ -15,7 +15,7 @@ import { FiLogOut } from "@react-icons/all-files/fi/FiLogOut";
 export default function Navbar() {
   return (
     <>
-      <nav>
+      <nav className="sticky">
         <div className="header">
           {/* logo */}
           <div className="logo">
@@ -44,10 +44,6 @@ export default function Navbar() {
                       to="/Dashboard"
                       className="menu-name"
                     >
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
                       <RiDashboardFill />
                       Dashboard
                     </Link>
@@ -58,10 +54,6 @@ export default function Navbar() {
                       to="/Goals"
                       className="menu-name"
                     >
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
                       <BiTask />
                       Goals
                     </Link>
@@ -72,10 +64,6 @@ export default function Navbar() {
                       to="/Peoples"
                       className="menu-name"
                     >
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                      <span></span>
                       <MdPeople />
                       Peoples
                     </Link>
@@ -87,7 +75,9 @@ export default function Navbar() {
               <div className="dropdown">
                 <Link to="/Profile">
                   <button className="dropbtn">
-                    <FaUserTie />
+                    <span style={{ padding: "9px" }}>
+                      <FaUserTie />
+                    </span>
                   </button>
                 </Link>
                 <div className="dropdown-content">
