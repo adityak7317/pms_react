@@ -1,132 +1,48 @@
 nav{
-    --navcolor:rgb(128, 187, 255);
-    --hovercolor: rgb(80 160 252);
-    background-color:  var(--navcolor);
-    width: 100%;
-    height: 10%;
-    font-family: Arial, Helvetica, sans-serif;
-    /* position: absolute; */
+    --navcolor:#E9EAFB;
+    background-color: var(--navcolor)
 }
-
-.company-logo{
-    padding: 5px;
-    width: 105%;
-    height: 79%;
-    margin-top: 6px;
+.logo{
+    padding:9px;
+    padding-left:0%
+    /* width:70%;
+    height: 70%; */
+    /*  */
 }
-.header{
-    display: flex;
-}
-span{
-    /* justify-content: center; */
-    font-style: bold;
-}
-h3{
-    margin-left: 380px;
-    margin-right: 524px;
+h4{
+    text-align: center;
 
 }
-ul{
-    margin-left: 141px;
-    display: flex;
-    justify-content: space-evenly;
-    
-    /* text-transform: uppercase; */
-}
-.nav-content{
-    /* flex-direction: row; */
-    display: flex;
-    /* flex-wrap: nowrap; */
-    /* flex-direction: column; */
-    justify-content: space-around;
-    margin-bottom: -10px;
-
-}
-li{
-    list-style: none;
-    text-decoration: none;
-}
-
+/* 
 .menu-name{
-    position: relative;
+    border-bottom: 3px solid var(--navcolor);
+} */
+.menu-name:hover{
+    color: blue !important;
+    /* border-color: blue; */
 }
 
-/*  */
-
-.nav-container{
-    width: 100%;
-    /* justify-content: center; */
+.drop{
+    margin:0%;
+    padding: 0.5%;
 }
-
-.menu-name{
-    box-sizing: border-box;
-    padding: 5px;
-    margin: 40px;
-    color: rgb(0, 0, 0) !important;
-    font-style: normal;
-    font-size: larger;
-    border: 3px solid var(--navcolor);
-    border-radius: 5px;
-
+.dropbtn{
+    margin-left: 18px;
+    border: none;
+    background-color: var(--navcolor);
 }
-.menu-name:hover {
-    background-color: var(--hovercolor) !important;
-    color: #ffffff !important;
-    border-color: black;
-    box-shadow: 0px 0px 12px white;
-    transition-duration: 100ms;
-    /* border-bottom: 5px solid red; */
-
-}
-.nav-menu{
-    /* margin-bottom: auto; */
-    margin: 0%;
-    padding: 0%;
-}
-
-
-.dropbtn {
-    background-color:var(--navcolor);
-    /* padding: 16px; */
-    font-size: 16px;
-    /* border: none; */
-    /* margin: auto;   */
-    margin-right:0px ;
-    padding: 4%;
-    box-sizing: border-box;
-    border: 3px solid var(--navcolor);
-    border-radius: 5px;
-}
-
 
 .dropbtn:hover{
-  /* background-color: var(--hovercolor); */
-
-  background-color: var(--hovercolor) !important;
-  color: #ffffff !important;
-  border-color: black;
-  box-shadow: 0px 0px 12px white;
-  
-  /* box-shadow: 1px 1px 8px rgb(255, 255, 255); */
-  transition-duration: 100ms;  /* text-shadow: 3px 3px 9px black; */
 }
 
 
-  .dropdown {
-    position: relative;
-    /* display: inline-block; */
-/* box-sizing: border-box;
-border: 1px solid white;   */
-}
+
   .dropdown-content {
 
-    margin-top: 5px;
-    /* margin-right: 1000px; */
-    padding: 9px;
     display: none;
     position: absolute;
     background-color: #fff;
-    min-width: 160px;
+    /* min-width: 50px; */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 5%;
     z-index: 1;
@@ -135,65 +51,22 @@ border: 1px solid white;   */
   
   .dropdown-content Link  {
     color: black;
-    padding: 12px 16px;
+    /* padding: 12px 16px; */
     text-decoration: none;
-    display: block;
+    /* display: block; */
     
   }
   
-  .dropdown-content Link :hover {background-color: #ddd;}
-  
-  .dropdown:hover .dropdown-content {
+  .drop:hover .dropdown-content {
+      margin-left: -60px;
+      margin-top: 5px;
+      padding: 3px;
       display: block;
+      border-radius: 5% !important;
+
     }
   
-  .dropdown:hover .dropbtn {
-      background-color: var(--navcolor);
-    
-    }
-
-
-/*  */
-
-
 
 .dropdown-item{
-    font-size: large;
-    padding: 3%;
-    margin: 0%;
+    font-size: medium;
 }
-
-.dropdown-item{
-    
-    font-size: 18px;
-    padding: 3%;
-    /* background-color: rgb(195, 199, 255); */
-    /* padding-left: 0%; */
-}
-
-.dropdown-item :hover{
-    background-color: rgb(219, 219, 219);
-}
-.dropdown-toggle{
-    background-color: var(--navcolor);
-    /* margin-left: 550px; */
-
-}
-.dropdown-toggle :hover{
-    color:white;
-    /* font-style:normal; */
-    /* text-decoration: none; */
-    
-}
-
-
-/* .sticky .header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100% ;
-    z-index: 9999;
-    background-color: blue;
-}
-
- */
