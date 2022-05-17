@@ -82,7 +82,7 @@ export default function Navbar() {
           <div className="heading">
             <span>
               <h4 style={{ margin: "0%", padding: "0%" }}>
-                Performance Management System
+                Performance Management System,
               </h4>
             </span>
           </div>
