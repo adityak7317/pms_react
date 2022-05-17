@@ -6,28 +6,30 @@ function BarChart({ chartData }) {
   const style = {
     bar: {
       // boxSizing: "border-box",
-      margin: "0%",
-      height: "540px",
-      width: "1000px",
-      marginTop: "35px",
-      marginLeft: "220px",
+      // margin: "0%",
+      // height: "300px",
+      width: "850px",
+      // paddingTop: "35px",
+      // marginLeft: "0%",
       // justifyContent:"center"
       // display: "flex",
       // flexDirection: "column",
+      // backgroundColor: "pink",
     },
     avg: {
       // margin: "3%",
-      // justifyItems: "center",
-      marginLeft: "15px",
+      justifyItems: "center",
+      // marginLeft: "%",
       fontFamily: "sans-serif",
       color: "rgba(97, 97, 97, 1)",
+      padding: "3px",
     },
   };
   return (
     <>
       <div style={style.bar} className="bar">
         <Bar data={chartData} />
-        <div className="average" style={style.avg}>
+        <div style={style.avg} className="average">
           <span>Average Rating : 6.4</span>
         </div>
       </div>

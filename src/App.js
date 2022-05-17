@@ -17,6 +17,12 @@ import Feedback from "./Components/Feedback/Feedback";
 import Profile from "./Components/Profile/Profile";
 import Footer from "./Components/Footer/Footer";
 import Login from "./Components/Login/Login";
+import Approved from "../src/Components/Goals/D-Goals/Approved";
+import CompletedByManager from "../src/Components/Goals/D-Goals/CompletedByManager";
+import CompletedByMe from "../src/Components/Goals/D-Goals/CompletedByMe";
+import Rejected from "../src/Components/Goals/D-Goals/Rejected";
+import Total from "../src/Components/Goals/D-Goals/Total";
+import YetToApproved from "../src/Components/Goals/D-Goals/YetToApproved";
 
 function App() {
   return (
@@ -32,6 +38,15 @@ function App() {
           <Route path="/peoples" element={<Peoples />}></Route>
           <Route path="/feedback" element={<Feedback />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/Approved" element={<Approved />}></Route>
+          <Route
+            path="/CompletedByManager"
+            element={<CompletedByManager />}
+          ></Route>
+          <Route path="/CompletedByMe" element={<CompletedByMe />}></Route>
+          <Route path="/Rejected" element={<Rejected />}></Route>
+          <Route path="/Total" element={<Total />}></Route>
+          <Route path="/YetToApproved" element={<YetToApproved />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

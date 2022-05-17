@@ -1,10 +1,9 @@
 .bar{
-    padding: 30px;
-    /* margin: 10px; */
-    /* justify-content: center; */
+    margin:3% 0% ;
+    padding: 15px;
     box-sizing: border-box;
     border: 1px solid white;
-    border-radius: 10px;
     box-shadow: 0px 0px 5px gray;
-    /* background-color: rgb(255, 215, 182); */
+    border-radius: 10px;
+    /* padding-top:0% ; */
 }

@@ -29,24 +29,43 @@ export default function Dashboard() {
       // boxShadow: ("0px", "0px", "10px", "gray"),
       // margin: "1%",
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "row",
+      justifyContent: "space-around",
+    },
+    DGoals: {
+      // margin: "3% 1%",
+      padding: "2% 0%",
+      margin: "2%",
+    },
+    bar: {
+      // margin: "-10%",
+      // padding: "1%",
+      // marginLeft: "50px",
+      // backgroundColor: "blue",
     },
   };
 
   return (
     <>
-      <div style={style.dashboard}>
-        <div className="dashboard">
-          <div className="goals">
-            <Goals />
-          </div>
-          <div className="barchart">
-            <div style={{ width: 700 }}>
-              <BarChart chartData={rateData} />
-            </div>
+      <div style={style.dashboard} className="dashboard">
+        <div style={style.DGoals} className="d-goals">
+          <Goals />
+        </div>
+        <div style={style.bar} className="barchart">
+          <div>
+            <BarChart chartData={rateData} />
           </div>
         </div>
       </div>
     </>
   );
 }
+
+// <div className="dashboard">
+//           <div className="goals">
+//
+//           </div>
+//           <div className="barchart">
+
+//           </div>
+//         </div>
