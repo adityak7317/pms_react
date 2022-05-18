@@ -112,6 +112,12 @@ export default function Navbar() {
                   Profile
                 </Link>
               </li>
+              <li>
+                <Link style={style.link} to="/Feedback" className="menu-name">
+                  {/* <RiFeedbackLine /> */}
+                  Feedback
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -131,9 +137,9 @@ export default function Navbar() {
               <Link className="dropdown-item" to="#">
                 <BiUserPin /> Roles
               </Link>
-              <Link className="dropdown-item" to="/Feedback">
+              {/* <Link className="dropdown-item" to="/Feedback">
                 <RiFeedbackLine /> Feedback
-              </Link>
+              </Link> */}
               <Link className="dropdown-item" to="/Login">
                 <FiLogOut /> Logout
               </Link>
