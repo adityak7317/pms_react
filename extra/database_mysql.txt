@@ -34,7 +34,8 @@ values ('Manager'),
 
 
 create table employees(
-	emp_id int primary key auto_increment,
+	emp_no int primary key auto_increment,
+    emp_code varchar(10),
     emp_name varchar(300) not null,
     phone varchar(15) not null,
     email varchar(100) not null,
@@ -48,19 +49,19 @@ create table employees(
 
 
 
-insert into employees(emp_name, phone, email, password, dept_id, role_id)
-values ("Kanaka", 999, "kanaka.cs@ahana.co.in", "passwordkanaka", 1, 3),
-("Prakruthi", 888, "prakruthi.holla@ahana.co.in", "passwordprakruthi", 1,3),
-("Veerana", 777, "bedasur.veeranna@ahana.co.in", "passwordveerana",1,3),
-("Aditya", 666, "aditya.kumar@ahana.co.in", "passwordaditya",1,3),
-("Sudheendra", 555, "sudheendra.gururaj@ahana.co.in", "passwordsudheendra", 1,1),
-("Sunil",444, "sunil.rao@ahana.co.in", "passwordsunil",1,1)
+insert into employees(emp_code, emp_name, phone, email, password, dept_id, role_id)
+values ("A001","Kanaka", 999, "kanaka.cs@ahana.co.in", "passwordkanaka", 1, 3),
+("A002","Prakruthi", 888, "prakruthi.holla@ahana.co.in", "passwordprakruthi", 1,3),
+("A003","Veerana", 777, "bedasur.veeranna@ahana.co.in", "passwordveerana",1,3),
+("A004","Aditya", 666, "aditya.kumar@ahana.co.in", "passwordaditya",1,3),
+("A004","Sudheendra", 555, "sudheendra.gururaj@ahana.co.in", "passwordsudheendra", 1,1),
+("A005","Sunil",444, "sunil.rao@ahana.co.in", "passwordsunil",1,1)
 ;
 
 
 create table goals(
 	goal_id int primary key auto_increment,
-    emp_id int not null,
+    emp_no int not null,
     goal_title longtext not null,
     goal_desc longtext not null,
     start_date date not null,
@@ -69,13 +70,13 @@ create table goals(
 	action_date datetime default now(),
     comment longtext,
     rating int default 0,
-    g_status int default 0,
+    goal_status int default 0,
     senior_emp int,
-    foreign key(senior_emp) references employees(emp_id),
-    foreign key(emp_id) references employees(emp_id)
+    foreign key(senior_emp) references employees(emp_no),
+    foreign key(emp_no) references employees(emp_no)
 );
 
-insert into goals(emp_id, goal_title, goal_desc, start_date, end_date)
+insert into goals(emp_no, goal_title, goal_desc, start_date, end_date)
 values (1, "learn aws cloud", "complete aws cloud", "2022-03-02", "2022-05-31"),
 (2,"java certificate", "learn java", "2022-04-21", "2022-06-23"),
 (3, "python course", "complete python course", "2022-06-01", "2022-08-01"),
@@ -90,13 +91,13 @@ create table feedbacks(
     sender_id int not null,
     receiver_id int not null,
     feedback_points int not null,
-    foreign key(sender_id) references employees(emp_id),
-    foreign key(receiver_id) references employees(emp_id)
+    foreign key(sender_id) references employees(emp_no),
+    foreign key(receiver_id) references employees(emp_no)
 );
 
 
 
-select employees.emp_id,
+select employees.emp_no, employees.emp_code,
 employees.emp_name,
 depts.dept_name,
 roles.role_name,
@@ -107,6 +108,5 @@ on employees.dept_id = depts.dept_id
 inner join roles
 on employees.role_id = roles.role_id
 inner join goals
-on employees.emp_id = goals.emp_id
-order by employees.emp_name
+on employees.emp_no = goals.emp_no
 ;
