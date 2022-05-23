@@ -4,12 +4,12 @@ create database pms;
 use pms;
 
 create table depts(
-	d_id int primary key auto_increment,
-    d_name varchar(100) not null
+	dept_id int primary key auto_increment,
+    dept_name varchar(100) not null
 );
 
 
-insert into depts(d_name)
+insert into depts(dept_name)
 values ('IT'),
 ('Management'),
 ('Bussiness'),
@@ -18,12 +18,12 @@ values ('IT'),
 
 
 create table roles(
-	r_id int primary key auto_increment,
-    r_name varchar(100) not null
+	role_id int primary key auto_increment,
+    role_name varchar(100) not null
 );
 
 
-insert into roles(r_name)
+insert into roles(role_name)
 values ('Manager'),
 ('Team Lead'),
 ('Software Engineer'),
@@ -34,71 +34,79 @@ values ('Manager'),
 
 
 create table employees(
-	em_id int primary key auto_increment,
-    em_name varchar(300) not null,
-    em_phone varchar(15) not null,
-    em_email varchar(100) not null,
-    em_pass varchar(30) not null,
-    d_id int not null,
-    r_id int not null,
-    foreign key(d_id) references depts(d_id),
-    foreign key(r_id) references roles(r_id)
+	emp_id int primary key auto_increment,
+    emp_name varchar(300) not null,
+    phone varchar(15) not null,
+    email varchar(100) not null,
+    password varchar(30) not null,
+    dept_id int not null,
+    role_id int not null,
+    foreign key(dept_id) references depts(dept_id),
+    foreign key(role_id) references roles(role_id)
 );
 
 
-insert into employees(em_name, em_phone, em_email, em_pass, d_id, r_id)
-values('Ram', '9539384726', 'ram@admin.com', 'passwordram', 1, 1),
-('suraj', '9638936307', 'email@email.com', 'passwordxyz', 2,4),
-('keshav', '9047374937', 'example@email.com', 'password', 4,2),
-('dinesh', '8365908268', 'gmail@gmai.com', 'password', 2,5),
-('shiv', '9379379276', 'email@admin.com', 'passwordshiv', 3,1),
-('akash', '8362073297', 'xyz@email.com', 'abc', 4,5);
+
+
+insert into employees(emp_name, phone, email, password, dept_id, role_id)
+values ("Kanaka", 999, "kanaka.cs@ahana.co.in", "passwordkanaka", 1, 3),
+("Prakruthi", 888, "prakruthi.holla@ahana.co.in", "passwordprakruthi", 1,3),
+("Veerana", 777, "bedasur.veeranna@ahana.co.in", "passwordveerana",1,3),
+("Aditya", 666, "aditya.kumar@ahana.co.in", "passwordaditya",1,3),
+("Sudheendra", 555, "sudheendra.gururaj@ahana.co.in", "passwordsudheendra", 1,1),
+("Sunil",444, "sunil.rao@ahana.co.in", "passwordsunil",1,1)
+;
 
 
 create table goals(
-	g_id int primary key auto_increment,
-    em_id int not null,
-    g_title longtext not null,
-    g_desc longtext not null,
-    s_date date not null,
-    e_date date not null,
+	goal_id int primary key auto_increment,
+    emp_id int not null,
+    goal_title longtext not null,
+    goal_desc longtext not null,
+    start_date date not null,
+    end_date date not null,
+    created_date datetime default now(),
+	action_date datetime default now(),
     comment longtext,
-    rating int,
-    g_status int,
-    goal_date datetime,
-    action_date datetime,
-    completion_date datetime,    
-    foreign key(em_id) references employees(em_id)
+    rating int default 0,
+    g_status int default 0,
+    senior_emp int,
+    foreign key(senior_emp) references employees(emp_id),
+    foreign key(emp_id) references employees(emp_id)
 );
 
-
-insert into goals(em_id, g_title, g_desc, s_date, e_date, g_status, goal_date, action_date)
-values(1, 'get aws certificate', 'Amazon Web Services, Inc. is a subsidiary of Amazon providing on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis.', '2022-03-12', '2022-05-13', 1, now(), now()),
-(3, 'complete abc project', 'abc project will be completed with in the time period', '2022-01-05', '2022-04-12', 2, now(), now());
+insert into goals(emp_id, goal_title, goal_desc, start_date, end_date)
+values (1, "learn aws cloud", "complete aws cloud", "2022-03-02", "2022-05-31"),
+(2,"java certificate", "learn java", "2022-04-21", "2022-06-23"),
+(3, "python course", "complete python course", "2022-06-01", "2022-08-01"),
+(4, "c++ course", "complete c++ course", "2022-07-01", "2022-10-01");
 
 
 create table feedbacks(
-	f_id int primary key auto_increment,
-    sent_em int not null,
-    f_date datetime not null,
-    f_subject longtext not null,
-    f_desc longtext not null,
-    rec_em int not null,
-    foreign key(sent_em) references employees(em_id),
-    foreign key(rec_em) references employees(em_id)
+	feedback_id int primary key auto_increment,
+    feedback_sub longtext not null,
+    feedback_desc longtext not null,
+    feedback_date datetime not null,
+    sender_id int not null,
+    receiver_id int not null,
+    feedback_points int not null,
+    foreign key(sender_id) references employees(emp_id),
+    foreign key(receiver_id) references employees(emp_id)
 );
 
 
 
-select employees.em_name, employees.em_email, 
-depts.d_name, 
-roles.r_name, 
-goals.g_title, goals.g_status, goals.action_date 
+select employees.emp_id,
+employees.emp_name,
+depts.dept_name,
+roles.role_name,
+goals.goal_title
 from employees
-inner join depts 
-on employees.d_id = depts.d_id
+inner join depts
+on employees.dept_id = depts.dept_id
 inner join roles
-on employees.r_id = roles.r_id
-inner join goals 
-on employees.em_id = goals.em_id
+on employees.role_id = roles.role_id
+inner join goals
+on employees.emp_id = goals.emp_id
+order by employees.emp_name
 ;
