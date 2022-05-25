@@ -1,0 +1,31 @@
+.cards{
+   
+    background-color: rgb(235, 231, 229);
+    display: inline-block;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 40px;
+    width: 200px;
+    border-radius: 10px;
+    
+
+}
+.image
+{
+    width: 200px;
+    height: 100px;
+}
+.card-items
+{
+    text-align: center;
+}
+.head{
+    background-color: black;
+    border-radius: 10px;
+    height: 30px;
+    width:300px;
+    text-align:center;
+    font-family:unset;
+    color: white;
+    margin-left: 50px;
+}
