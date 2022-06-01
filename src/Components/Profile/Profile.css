@@ -1,20 +1,31 @@
-.cardss{
-   
-    background-color: rgb(255, 255, 255);
+.image
+{
+    width: 255px;
+    height: 260px;
+}
+.cards
+{
+    background-color: rgb(235, 231, 229);
     display: inline-block;
-    padding: 10px 0px 10px 0px ;
-     margin:0px 0px 20px 65px;
-    width: 19%;
-    border-radius: 12px;
-    height: 430px;
-    align-items: center; 
-    border: 1px solid burlywood;
-    box-shadow: 5px 5px #dbd8d8;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 40px;
+    width: 94%;
+    height: 350px;
+    border-radius: 10px;
+    
 }
-h2{
-    color: rgb(22, 22, 27);
+.cards4
+{
+    background-color: rgb(235, 231, 229);
+    display: inline-block;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 40px;
+    width: 94%;
+    height: 350px;
+    border-radius: 10px;
+    
+
 }
-.maindiv{
-    padding: auuto;
-    margin: auto;
-}
+

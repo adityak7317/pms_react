@@ -106,12 +106,7 @@ export default function Navbar() {
                   Peoples
                 </Link>
               </li>
-              <li>
-                <Link style={style.link} to="/Profile" className="menu-name">
-                  {/* <ImProfile /> */}
-                  Profile
-                </Link>
-              </li>
+            
               <li>
                 <Link style={style.link} to="/Feedback" className="menu-name">
                   {/* <RiFeedbackLine /> */}
@@ -131,17 +126,18 @@ export default function Navbar() {
               </button>
             </Link>
             <div className="dropdown-content">
-              {/* <Link className="dropdown-item" to="/Profile">
-                <ImProfile /> Profile
-              </Link> */}
+              
               <Link className="dropdown-item" to="#">
-                <BiUserPin /> Roles
+                {/* <BiUserPin /> */}
+                 Roles
               </Link>
-              {/* <Link className="dropdown-item" to="/Feedback">
-                <RiFeedbackLine /> Feedback
-              </Link> */}
+              <Link  className="dropdown-item" style={style.link} to="/profile" >
+                  {/* <ImProfile /> */}
+                  Profile
+                </Link>
               <Link className="dropdown-item" to="/Login">
-                <FiLogOut /> Logout
+                {/* <FiLogOut /> */}
+                 Logout
               </Link>
             </div>
           </div>

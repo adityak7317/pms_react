@@ -1,4 +1,4 @@
-.cards{
+.cardss{
    
     background-color: rgb(235, 231, 229);
     display: inline-block;
@@ -10,9 +10,9 @@
     
 
 }
-.image
+.imagee
 {
-    width: 200px;
+    width: 155px;
     height: 100px;
 }
 .card-items
@@ -22,10 +22,10 @@
 .head{
     background-color: black;
     border-radius: 10px;
-    height: 30px;
+    height:40px;
     width:300px;
     text-align:center;
     font-family:unset;
     color: white;
-    margin-left: 50px;
+    margin-left: 40px;
 }
